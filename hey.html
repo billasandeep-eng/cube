@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image:linear-gradient(pink,red,green);
+            background-size: cover;
+            width: 100%;
+        }
+        .sandy{
+            width: 200px;
+            height: 200px;
+            margin: 150px auto;
+            perspective: 600px;
+        }
+        .cube{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotatecube 5s infinite linear;
+            color: saddlebrown;
+            font-size: 32px;
+        }
+        .front,.back,.left,.right,.top,.bottom{
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+        .front{
+           background: url("https://i.pinimg.com/1200x/61/e8/d5/61e8d5cbbdfa423d9f2bda686cce17aa.jpg");
+            transform: translateZ(100px);
+            background-size: cover;
+        }
+          .back{
+            background:url("https://i.pinimg.com/736x/a4/fe/b0/a4feb0cc118946e5bae13f35473d1b9c.jpg");
+            background-size: cover;
+            transform: rotateY(180deg) translateZ(100px);
+        }
+         .right{
+          background: url("https://i.pinimg.com/736x/04/2a/9c/042a9c54db6a0732e33f25706bfcf82d.jpg");
+           transform: rotateY(90deg) translateZ(100px);
+          background-size: cover;
+        }
+         .left{
+             background-image: url("https://i.pinimg.com/736x/6c/39/82/6c39824d67f5530311900c4236d22b2e.jpg");
+            transform: rotateY(-90deg) translateZ(100px);
+            background-size: cover;
+        }
+         .top{
+            background: url("https://i.pinimg.com/736x/ff/1a/ec/ff1aec4d96ca794e30c1c72581d98614.jpg");
+            transform: rotateX(90deg) translateZ(100px);
+            background-size: cover;
+        }
+         .bottom{
+            background: url("https://i.pinimg.com/1200x/06/d7/26/06d726751deb3e1935668f0713abe5e4.jpg");
+            transform: rotateX(-90deg) translateZ(100px);
+            background-size: cover;
+        }
+        @keyframes rotatecube{
+            from{
+                transform: rotateX(0deg)
+                rotateY(0deg);
+            }
+            to{
+                transform: rotatex(360deg) rotatey(360deg) ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sandy">
+        <div class="cube">
+            <div class="front">Front</div>
+            <div class="back">Back</div>
+            <div class="left">Left</div>
+            <div class="right">Right</div>
+            <div class="top">Top</div>
+            <div class="bottom">Bottom</div>
+        </div>
+    </div>
+</body>
+</html>
